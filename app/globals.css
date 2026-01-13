@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600;700;800&display=swap');
+
+* {
+  @apply box-border;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  @apply bg-navy text-slate font-main;
+  background-image: radial-gradient(circle at 50% 10%, #112240 0%, #0a192f 100%);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #64ffda;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4ae8c0;
+}
+
+/* Selection Color */
+::selection {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+/* Animations */
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(100, 255, 218, 0.5);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Utility Classes */
+.cursor {
+  animation: blink 1s infinite;
+}
+
+.glow-element {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.slide-in-down {
+  animation: slideInDown 0.5s ease-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.fade-in-scale {
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glass Morphism Effect */
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(17, 34, 64, 0.7);
+  border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+/* Text Gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #64ffda, #8892b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a,
+[role="button"] {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Focus states for accessibility */
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-cyan;
+}
+
+/* Code block styling */
+code {
+  @apply font-mono text-sm px-2 py-1 rounded bg-navy-light/50 text-cyan;
+}
+
+pre {
+  @apply bg-navy-light border border-cyan/20 rounded-lg p-4 overflow-x-auto;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Hover effects for links */
+a {
+  @apply relative;
+}
+
+/* Enhanced input styling */
+input,
+textarea {
+  @apply bg-navy-light border border-cyan/20 rounded-lg px-4 py-2 text-white placeholder-slate/50 focus:border-cyan transition-colors;
+}
+
+input:focus,
+textarea:focus {
+  @apply outline-none border-cyan;
+}
