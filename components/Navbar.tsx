@@ -15,6 +15,17 @@ export default function Navbar() {
     { href: '#blog', label: 'Blog' },
   ]
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    setMobileMenuOpen(false)
+    
+    // Smooth scroll to section
+    const target = document.querySelector(href)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   const menuItemVariants = {
     hidden: { opacity: 0, x: -20 },
     visible: { opacity: 1, x: 0 },
@@ -69,7 +80,8 @@ export default function Navbar() {
             <motion.a
               key={link.href}
               href={link.href}
-              className="text-sm font-mono text-slate hover:text-cyan transition-colors relative"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-sm font-mono text-slate hover:text-cyan transition-colors relative cursor-pointer"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
@@ -132,12 +144,12 @@ export default function Navbar() {
                 <motion.a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   variants={menuItemVariants}
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: idx * 0.1 }}
-                  className="block text-sm font-mono text-slate hover:text-cyan transition-colors py-2 px-3 rounded hover:bg-navy/50"
-                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-sm font-mono text-slate hover:text-cyan transition-colors py-2 px-3 rounded hover:bg-navy/50 cursor-pointer"
                 >
                   {link.label}
                 </motion.a>
