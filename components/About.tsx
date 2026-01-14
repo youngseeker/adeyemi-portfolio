@@ -35,7 +35,7 @@ export default function About() {
               className="text-base md:text-lg text-slate leading-relaxed"
             >
               My journey is unique. It didn&apos;t start with code; it started with people. From
-              serving as <span className="text-cyan font-semibold">President of the Royal Ambassadors</span> to leading operations,
+              serving as <span className="text-cyan font-semibold">JIF President of the Royal Ambassadors</span> to leading operations,
               I learned that systems fail without human empathy.
             </motion.p>
 
