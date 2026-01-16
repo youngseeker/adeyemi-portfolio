@@ -33,16 +33,16 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-cyan/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 flex justify-between items-center">
         {/* Logo with Motion */}
-        <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
+        <Link href="/" className="flex items-center gap-1.5 sm:gap-2 md:gap-3 group min-w-fit">
           <motion.div
-            className="flex items-center gap-1"
+            className="flex items-center gap-0.5 sm:gap-1"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <motion.span
-              className="text-cyan font-mono font-bold text-xl sm:text-2xl"
+              className="text-cyan font-mono font-bold text-lg sm:text-xl md:text-2xl"
               animate={{ rotateZ: [0, 5, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity, repeatType: 'loop' }}
             >
@@ -51,37 +51,37 @@ export default function Navbar() {
             <div className="flex flex-col gap-0.5">
               <motion.span
                 className="block h-0.5 bg-cyan"
-                style={{ width: '12px' }}
-                animate={{ width: ['12px', '16px', '12px'] }}
+                style={{ width: '8px' }}
+                animate={{ width: ['8px', '12px', '8px'] }}
                 transition={{ duration: 2, repeat: Infinity }}
+              />
+              <motion.span
+                className="block h-0.5 bg-cyan"
+                style={{ width: '6px' }}
+                animate={{ width: ['6px', '9px', '6px'] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.1 }}
               />
               <motion.span
                 className="block h-0.5 bg-cyan"
                 style={{ width: '8px' }}
                 animate={{ width: ['8px', '12px', '8px'] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 0.1 }}
-              />
-              <motion.span
-                className="block h-0.5 bg-cyan"
-                style={{ width: '12px' }}
-                animate={{ width: ['12px', '16px', '12px'] }}
                 transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
               />
             </div>
           </motion.div>
-          <div className="font-bold text-white text-sm sm:text-lg group-hover:text-cyan transition-colors duration-300">
-            Adeyemi<span className="text-cyan">Adeniji</span>
+          <div className="font-bold text-white text-xs sm:text-sm md:text-lg group-hover:text-cyan transition-colors duration-300">
+            <span className="hidden xs:inline">Adeyemi</span><span className="inline xs:hidden">A</span><span className="text-cyan">Adeniji</span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <motion.a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-mono text-slate hover:text-cyan transition-colors relative cursor-pointer"
+              className="text-xs lg:text-sm font-mono text-slate hover:text-cyan transition-colors relative cursor-pointer"
               whileHover={{ y: -2 }}
               whileTap={{ y: 0 }}
             >
@@ -96,7 +96,7 @@ export default function Navbar() {
           ))}
           <motion.a
             href="mailto:danieladeniji001@gmail.com"
-            className="text-sm font-mono px-4 py-2 border border-cyan text-cyan rounded hover:bg-cyan/10 transition-all"
+            className="text-xs lg:text-sm font-mono px-3 lg:px-4 py-2 border border-cyan text-cyan rounded hover:bg-cyan/10 transition-all"
             whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(100, 255, 218, 0.3)' }}
             whileTap={{ scale: 0.95 }}
           >
@@ -139,7 +139,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-navy-light border-t border-cyan/10 overflow-hidden"
           >
-            <div className="px-4 sm:px-6 py-4 space-y-2">
+            <div className="px-3 sm:px-4 py-3 space-y-1.5">
               {navLinks.map((link, idx) => (
                 <motion.a
                   key={link.href}
@@ -149,7 +149,7 @@ export default function Navbar() {
                   initial="hidden"
                   animate="visible"
                   transition={{ delay: idx * 0.1 }}
-                  className="block text-sm font-mono text-slate hover:text-cyan transition-colors py-2 px-3 rounded hover:bg-navy/50 cursor-pointer"
+                  className="block text-xs sm:text-sm font-mono text-slate hover:text-cyan transition-colors py-2.5 px-3 rounded hover:bg-navy/50 cursor-pointer"
                 >
                   {link.label}
                 </motion.a>
@@ -160,7 +160,7 @@ export default function Navbar() {
                 initial="hidden"
                 animate="visible"
                 transition={{ delay: navLinks.length * 0.1 }}
-                className="block text-sm font-mono px-4 py-2 border border-cyan text-cyan rounded hover:bg-cyan/10 transition-colors mt-4"
+                className="block text-xs sm:text-sm font-mono px-3 py-2.5 border border-cyan text-cyan rounded hover:bg-cyan/10 transition-colors mt-3"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact

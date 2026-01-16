@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { blogArticles } from '@/data/content'
 
@@ -100,9 +101,9 @@ export default function Blog() {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 flex items-center gap-3 md:gap-4"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 md:gap-4"
         >
-          <span className="text-cyan font-mono text-2xl md:text-3xl">05.</span>
+          <span className="text-cyan font-mono text-xl sm:text-2xl md:text-3xl">05.</span>
           <span className="text-white">Thoughts & Insights</span>
           <motion.div
             className="hidden md:block h-0.5 flex-1 bg-gradient-to-r from-cyan/50 to-transparent"
@@ -112,9 +113,9 @@ export default function Blog() {
           />
         </motion.h2>
 
-        <div className="flex items-center justify-between mb-8 md:mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 md:mb-12">
           <div className="flex-1">
-            <p className="text-slate text-sm md:text-base max-w-2xl">
+            <p className="text-slate text-xs sm:text-sm md:text-base max-w-2xl">
               Authentic essays on AI, education, systems thinking, and personal philosophy.
             </p>
           </div>
@@ -124,10 +125,10 @@ export default function Blog() {
             onClick={() => setShowAuthorModal(true)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-br from-cyan/10 to-cyan/5 border border-cyan/30 hover:border-cyan transition-all group ml-4 flex-shrink-0"
+            className="hidden sm:flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-gradient-to-br from-cyan/10 to-cyan/5 border border-cyan/30 hover:border-cyan transition-all group flex-shrink-0 w-fit"
           >
-            <AuthorAvatar className="w-8 h-8 text-cyan" />
-            <span className="text-xs md:text-sm font-mono text-cyan group-hover:text-white transition-colors">Author</span>
+            <AuthorAvatar className="w-6 sm:w-8 h-6 sm:h-8 text-cyan" />
+            <span className="text-xs font-mono text-cyan group-hover:text-white transition-colors">Author</span>
           </motion.button>
         </div>
 
@@ -136,13 +137,13 @@ export default function Blog() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex flex-wrap gap-2 md:gap-3 mb-12"
+          className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 mb-8 md:mb-12 overflow-x-auto pb-2"
         >
           {categories.map((category) => (
             <motion.button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-lg font-mono text-sm transition-all ${
+              className={`px-3 sm:px-4 py-2 rounded-lg font-mono text-xs sm:text-sm transition-all whitespace-nowrap ${
                 selectedCategory === category
                   ? 'bg-cyan text-navy font-bold'
                   : 'bg-navy-light border border-cyan/30 text-cyan hover:border-cyan'
@@ -160,7 +161,7 @@ export default function Blog() {
           variants={container}
           initial="hidden"
           whileInView="visible"
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12"
         >
           <AnimatePresence mode="wait">
             {filteredArticles.map((article) => (
@@ -169,34 +170,34 @@ export default function Blog() {
                 variants={item}
                 exit={{ opacity: 0, y: -20 }}
                 layoutId={`article-${article.id}`}
-                onClick={() => setSelectedArticle(article)}
                 whileHover={{ y: -8 }}
-                className="bg-gradient-to-br from-navy-light to-navy-lighter border border-cyan/20 rounded-xl p-6 cursor-pointer hover:border-cyan/50 transition-all duration-300 group flex flex-col h-full"
+                className="bg-gradient-to-br from-navy-light to-navy-lighter border border-cyan/20 rounded-lg sm:rounded-xl p-4 sm:p-6 hover:border-cyan/50 transition-all duration-300 group flex flex-col h-full cursor-pointer"
+                onClick={() => setSelectedArticle(article)}
               >
                 {/* Category Badge */}
                 <motion.span
-                  className="inline-flex w-fit px-3 py-1 bg-cyan/10 border border-cyan/30 text-cyan rounded-full text-xs font-mono mb-4 group-hover:bg-cyan/20 transition-colors"
+                  className="inline-flex w-fit px-2 sm:px-3 py-1 bg-cyan/10 border border-cyan/30 text-cyan rounded-full text-xs font-mono mb-3 sm:mb-4 group-hover:bg-cyan/20 transition-colors"
                   whileHover={{ scale: 1.05 }}
                 >
                   {article.category}
                 </motion.span>
 
                 {/* Title */}
-                <h3 className="text-white font-bold text-lg mb-3 group-hover:text-cyan transition-colors line-clamp-2">
+                <h3 className="text-white font-bold text-base sm:text-lg mb-2 sm:mb-3 group-hover:text-cyan transition-colors line-clamp-2">
                   {article.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-slate text-sm leading-relaxed mb-4 flex-1">{article.excerpt}</p>
+                <p className="text-slate text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 flex-1 line-clamp-2 sm:line-clamp-3">{article.excerpt}</p>
 
                 {/* Meta Info */}
-                <div className="flex items-center justify-between text-xs text-slate/70 border-t border-cyan/10 pt-4 mt-auto mb-4">
-                  <span className="font-mono">{article.date}</span>
-                  <span className="text-cyan/70">{article.readTime}</span>
+                <div className="flex items-center justify-between text-xs text-slate/70 border-t border-cyan/10 pt-3 sm:pt-4 mt-auto mb-3 sm:mb-4">
+                  <span className="font-mono text-xs">{article.date}</span>
+                  <span className="text-cyan/70 text-xs">{article.readTime}</span>
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 mb-3 sm:mb-4">
                   {article.tags.slice(0, 2).map((tag) => (
                     <span key={tag} className="text-xs text-cyan/60 bg-cyan/5 px-2 py-1 rounded">
                       #{tag}
@@ -204,10 +205,19 @@ export default function Blog() {
                   ))}
                 </div>
 
-                {/* Engagement Preview */}
-                <div className="flex items-center gap-4 text-xs text-slate/70 border-t border-cyan/10 pt-3">
-                  <span>👍 {articleLikes[article.id] || 0}</span>
-                  <span>💬 {article.comments.length}</span>
+                {/* Engagement Preview & Read More Link */}
+                <div className="flex flex-col gap-3 border-t border-cyan/10 pt-3 sm:pt-4 mt-auto">
+                  <div className="flex items-center gap-3 sm:gap-4 text-xs text-slate/70">
+                    <span>👍 {articleLikes[article.id] || 0}</span>
+                    <span>💬 {article.comments.length}</span>
+                  </div>
+                  <Link
+                    href={`/blog/${article.slug}`}
+                    className="text-cyan hover:text-white transition-colors text-xs sm:text-sm font-mono font-bold"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Read Full Article →
+                  </Link>
                 </div>
               </motion.article>
             ))}

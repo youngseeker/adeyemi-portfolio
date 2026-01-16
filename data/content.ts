@@ -76,6 +76,7 @@ export const certifications = [
 export const blogArticles = [
   {
     id: 1,
+    slug: 'outdated-os-trap-education-ai-era',
     title: 'The "Outdated OS" Trap: How to Hack Your Education for the AI Era',
     excerpt: 'Why your degree isn\'t broken — it\'s just not designed to save you. A framework for upgrading your learning system.',
     content: `Why your degree isn't broken — it's just not designed to save you
@@ -189,6 +190,7 @@ The future doesn't reward those who follow instructions perfectly. It rewards th
   },
   {
     id: 2,
+    slug: 'physics-why-new-year-fails',
     title: 'The Physics of Why Your New Year Will Fail (And How to Win Anyway)',
     excerpt: 'Physics doesn\'t negotiate. It only executes. Here\'s why your resolutions fail and how to fix your system.',
     content: `Physics doesn't negotiate. It only executes.
