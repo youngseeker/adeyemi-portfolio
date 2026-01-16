@@ -70,7 +70,7 @@ export default function Navbar() {
             </div>
           </motion.div>
           <div className="font-bold text-white text-xs sm:text-sm md:text-lg group-hover:text-cyan transition-colors duration-300">
-            <span className="hidden xs:inline">Adeyemi</span><span className="inline xs:hidden">A</span><span className="text-cyan">Adeniji</span>
+            <span>Adeyemi</span><span className="text-cyan">Adeniji</span>
           </div>
         </Link>
 

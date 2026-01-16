@@ -81,6 +81,9 @@ export const blogArticles = [
     excerpt: 'Why your degree isn\'t broken — it\'s just not designed to save you. A framework for upgrading your learning system.',
     content: `Why your degree isn't broken — it's just not designed to save you
 
+![Student with outdated OS overlaying modern world](https://via.placeholder.com/800x400/0a192f/64ffda?text=Outdated+OS+Trap)
+*The gap between education systems and market reality*
+
 The Glitch Isn't the System. It's the Contract You Quietly Signed.
 We're the first generation to grow up with super-intelligence in our pockets and still sit in lecture halls optimised for a world that no longer exists.
 
@@ -105,6 +108,9 @@ Differentiation is the real degree.
 Your Mind Is Software. Most Students Never Update It.
 You can't run 2025 applications on 1990 hardware and blame the app when it crashes.
 
+![Software architecture showing outdated systems](https://via.placeholder.com/800x400/0a192f/64ffda?text=Mind+as+Software)
+*Your learning systems need continuous updates*
+
 Yet that's exactly what most students do.
 
 They optimise for grades instead of capability. They mistake familiarity for mastery. They confuse motion with progress. Over time, they accumulate something dangerous: learning debt — knowledge that works in exams but collapses under real pressure.
@@ -114,6 +120,9 @@ If you want leverage in the AI era, you have to treat learning like software: au
 The Four Stages of Competence (And Where Most People Stall)
 Most students study to pass.
 You need to study to evolve.
+
+![Four stages of competence chart](https://via.placeholder.com/800x400/0a192f/64ffda?text=Competence+Stages)
+*From unconscious incompetence to unconscious competence*
 
 The Four Stages of Competence turn learning from a vague obligation into a navigable system — but only if you're honest about where you are.
 
@@ -175,6 +184,9 @@ Use the APR protocol: Awareness, Pause, and Reframe. Your job isn't to feel bett
 The Real Point of a Degree
 A degree might get you to the interview.
 It won't make you irreplaceable.
+
+![Graduation cap with question mark symbolizing uncertain future](https://via.placeholder.com/800x400/0a192f/64ffda?text=Beyond+the+Degree)
+*A degree is a starting point, not a finish line*
 
 That comes from intent — from treating learning as an active experiment rather than a passive requirement.
 
@@ -266,6 +278,9 @@ It's the fire you started — and kept feeding — today.`,
     excerpt: 'Power isn\'t wealth or willpower. It\'s the alternatives you can actually see, survive, and pursue — and who designs that menu.',
     content: `Most people think they're choosing their lives. They're not.
 
+![Man in maze looking at digital menu - freedom illusion](https://via.placeholder.com/800x400/0a192f/64ffda?text=Menu+Control)
+*The illusion of choice: How menus are designed around you*
+
 They're selecting from a menu they didn't design, constrained by options they barely notice, mistaking motion for agency. What feels like freedom is often just compliance with better aesthetics.
 
 Real power operates upstream, shaping which options are even visible long before a decision feels like a choice. It is control over the menu of meaningful alternatives available to you.
@@ -296,6 +311,9 @@ Commitment without alternatives is not a virtue. It is a constraint wearing a fl
 
 Poverty is option scarcity
 Money matters — but poverty is more accurately understood as option scarcity.
+
+![Constrained options visualization - limited pathways](https://via.placeholder.com/800x400/0a192f/64ffda?text=Scarcity+Constraints)
+*How limited options narrow attention and decisions*
 
 Limited time. Weak networks. Fragile mobility. Missing information. Low bargaining power.
 
@@ -336,6 +354,9 @@ Stability is not a resting state. It is a temporary alignment on a moving trajec
 
 Perfection is a local maximum
 If a system were truly perfect, improvement would be unnecessary. Yet revision never stops. Products evolve. Skills decay. Institutions rewrite themselves.
+
+![Graph showing local maximum vs global maximum optimization](https://via.placeholder.com/800x400/0a192f/64ffda?text=Local+vs+Global+Maximum)
+*Perfection as a local peak: The trap of defending what works today*
 
 Perfection is usually a local maximum — a peak that looks final only because exploration stopped. The moment you defend the present as complete, you surrender the ability to compute better futures.
 
