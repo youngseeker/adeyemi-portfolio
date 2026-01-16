@@ -109,17 +109,19 @@ export default function BlogDetailPage({ params }: PageProps) {
         className="bg-gradient-to-b from-navy-light to-navy py-12 sm:py-20 px-4 sm:px-6"
       >
         <div className="max-w-3xl mx-auto">
-          <Link
-            href="/#blog"
-            className="inline-flex items-center gap-2 text-cyan hover:text-white transition-colors mb-6 text-sm"
-          >
-            <span>←</span>
-            <span>Back to Articles</span>
-          </Link>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+            <Link
+              href="/#blog"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-navy-light border border-cyan/30 text-cyan rounded-lg hover:bg-cyan/10 hover:border-cyan transition-all text-sm font-mono w-fit"
+            >
+              <span>←</span>
+              <span>Back to Articles</span>
+            </Link>
 
-          <span className="inline-block px-3 py-1 bg-cyan/10 border border-cyan/30 text-cyan rounded-full text-xs font-mono mb-4">
-            {article.category}
-          </span>
+            <span className="inline-block px-4 py-2 bg-cyan/10 border border-cyan/30 text-cyan rounded-lg text-xs font-mono w-fit">
+              {article.category}
+            </span>
+          </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">{article.title}</h1>
 
